@@ -1,0 +1,28 @@
+﻿  testMain.cpp
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(56): warning C4838: 从“double”转换到“float”需要收缩转换
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(56): warning C4305: “初始化”: 从“double”到“float”截断
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(57): warning C4838: 从“double”转换到“float”需要收缩转换
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(57): warning C4305: “初始化”: 从“double”到“float”截断
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(160): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+  Main.cpp
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(56): warning C4838: 从“double”转换到“float”需要收缩转换
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(56): warning C4305: “初始化”: 从“double”到“float”截断
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(57): warning C4838: 从“double”转换到“float”需要收缩转换
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(57): warning C4305: “初始化”: 从“double”到“float”截断
+f:\test\cpp\mtcourse\frank\niutensor\source\testnet\testmain.cpp(160): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+  正在生成代码...
+testMain.obj : error LNK2005: "void __cdecl Backward(struct nts::XTensor &,struct nts::XTensor &,struct FNNRegModel &,struct FNNRegModel &,struct FNNRegNet &)" (?Backward@@YAXAEAUXTensor@nts@@0AEAUFNNRegModel@@1AEAUFNNRegNet@@@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl CleanGrad(struct FNNRegModel &)" (?CleanGrad@@YAXAEAUFNNRegModel@@@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl Forword(struct nts::XTensor &,struct FNNRegModel &,struct FNNRegNet &)" (?Forword@@YAXAEAUXTensor@nts@@AEAUFNNRegModel@@AEAUFNNRegNet@@@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl Init(struct FNNRegModel &)" (?Init@@YAXAEAUFNNRegModel@@@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl InitGrad(struct FNNRegModel &,struct FNNRegModel &)" (?InitGrad@@YAXAEAUFNNRegModel@@0@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl MSELoss(struct nts::XTensor &,struct nts::XTensor &,struct nts::XTensor &)" (?MSELoss@@YAXAEAUXTensor@nts@@00@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl MSELossBackword(struct nts::XTensor &,struct nts::XTensor &,struct nts::XTensor &)" (?MSELossBackword@@YAXAEAUXTensor@nts@@00@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl Test(float *,int,struct FNNRegModel &)" (?Test@@YAXPEAMHAEAUFNNRegModel@@@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl Train(float *,float *,int,struct FNNRegModel &)" (?Train@@YAXPEAM0HAEAUFNNRegModel@@@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "void __cdecl Update(struct FNNRegModel &,struct FNNRegModel &,float)" (?Update@@YAXAEAUFNNRegModel@@0M@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "int __cdecl testMain(int,char const * *)" (?testMain@@YAHHPEAPEBD@Z) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "float learningRate" (?learningRate@@3MA) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "int nEpoch" (?nEpoch@@3HA) 已经在 Main.obj 中定义
+testMain.obj : error LNK2005: "float minmax" (?minmax@@3MA) 已经在 Main.obj 中定义
+F:\Test\cpp\MtCourse\frank\x64\Debug\niutensor.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
