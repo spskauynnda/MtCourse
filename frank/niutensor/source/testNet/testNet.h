@@ -1,10 +1,15 @@
 #include "../tensor/XGlobal.h"
 #include "../tensor/XTensor.h"
 #include "../tensor/core/CHeader.h"
+
+#ifndef _TESTNET_H__
+#define _TESTNET_H__
+
 using namespace nts;
 
 namespace testnet {
-	/* Global config for learning */
+     /* Global config for learning */
+	
 	 struct Config {
 		 float initLearningRate;
 		 int nEpoch;
@@ -36,3 +41,5 @@ namespace testnet {
 	};
 	int testNetMain(int argc, const char ** argv);
 };
+
+#endif

@@ -30,7 +30,6 @@
 #include "../tensor/test/Test.h"
 
 #include "../testNet/testNet.h"
-#include "../testNet/testNetMain.cpp"
 /* IF needs runing samples */
 /*
   #include "../sample/fnnlm/FNNLM.h"
