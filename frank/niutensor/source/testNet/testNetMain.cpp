@@ -17,7 +17,7 @@ namespace testnet {
 		0       // devID
 	};
 	
-	float trainDataX[] = { 51, 56.8, 58, 63, 66, 69, 73, 76, 81, 85, 90, 94, 97, 100, 103,107 };
+	float trainDataX[] = { 51, 56.8, 58, 63, 66, 69, 73, 76, 81, 85, 90, 94, 97, 100, 103, 107 };
 	float trainDataY[] = { 31, 34.7, 35.6, 36.7, 39.5, 42, 42.7, 47, 49, 51, 52.5, 54, 55.7, 56, 58.8, 59.2 };
 	float testDataX[]  = { 64, 80, 95 };
 
@@ -64,13 +64,13 @@ namespace testnet {
 		printf("Grad initialization completed\n");
 
 		/* Data initialization  */
-		for (int i = 0; i < testConfig.testDataSize; i++) {
+		for (int i = 0; i < testConfig.trainDataSize; i++) {
 			XTensor* pXi = NewTensor2D(1, 1, X_FLOAT, model.devID);
-			pXi->Set2D(trainDataX[i], 0, 0);
+			pXi->Set2D(trainDataX[i] / 100, 0, 0);
 			xList.Add(pXi);
 			
 			XTensor* pYi = NewTensor2D(1, 1, X_FLOAT, model.devID);
-			pYi->Set2D(trainDataY[i], 0, 0);
+			pYi->Set2D(trainDataY[i] / 60, 0, 0);
 			yList.Add(pYi);
 		}
 		printf("Data initialization completed\n");
@@ -79,26 +79,18 @@ namespace testnet {
 	void Train(TestModel& model, TestModel &grad, Config testConfig, TensorList xList, TensorList yList) {
 		TestNet hidNet;
 		for (int i = 0; i < testConfig.nEpoch; i++) {
-			printf("Loop: %d\n", i);
 			float totalLoss = 0;
 			if (i % 50 == 0) {
 				learningRate *= 0.4;
 			}
-			
 			for (int j = 0; j < testConfig.trainDataSize; j++) {
-				printf("innerj:%d  |", j); //
 				XTensor *pXi = xList.GetItem(j);
 				XTensor *pYi = yList.GetItem(j);
-				printf("  forward |"); //
 				Forward(hidNet, model, *pXi);
-				printf("  loss  |"); // 
 				XTensor loss;
 				MSELoss(loss, hidNet.h_w2, *pYi);
-				printf("  sumloss  |"); // 
 				totalLoss += loss.Get1D(0);
-				printf("  grad  |"); // 
 				Backward(grad, model, hidNet, *pXi, *pYi);
-				printf("  update  |"); // 
 				Update(model, grad, learningRate);
 				CleanGrad(grad);
 			}
@@ -110,14 +102,13 @@ namespace testnet {
 		hidNet.h_w1 = MatrixMul(input, model.w1);
 		hidNet.h_b = hidNet.h_w1 + model.b;
 		hidNet.h_activeFunc = HardTanH(hidNet.h_b);
-		hidNet.h_w2 = MatrixMul(model.w2, hidNet.h_activeFunc);
+		hidNet.h_w2 = MatrixMul(hidNet.h_activeFunc, model.w2);
 	}
 
 	void MSELoss(XTensor& loss, XTensor output, XTensor result) {
 		XTensor tmp = output - result;
 		// shift = 2 ??
-		//loss = ReduceSum(tmp, 1, 2) / output.dimSize[1];
-		loss = ReduceSum(tmp, 1, 2);
+		loss = ReduceSum(tmp, 1, 2) / output.dimSize[1];
 	}
 
 	void Backward(TestModel &grad, TestModel model, TestNet hidNet, XTensor input, XTensor result) {

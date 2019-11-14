@@ -385,7 +385,7 @@ XTensor ReduceSum(const XTensor &input, int dim, DTYPE power, bool isExp)
 
     /* call _ReduceSum function */
     _ReduceSum(&input, &output, dim, NULL, power, isExp);
-            
+
     /* tensor connection */
     if (input.enableGrad) {
         XLink::MakeLink(&input, NULL, &output, REDUCE_REDUCESUM);

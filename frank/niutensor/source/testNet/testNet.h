@@ -10,15 +10,15 @@ using namespace nts;
 namespace testnet {
      /* Global config for learning */
 	
-	 struct Config {
-		 float initLearningRate;
-		 int nEpoch;
-		 float minmax;
-		 int h_size;
-		 int trainDataSize;
-		 int testDataSize;
-		 int devID;
-	 };
+	struct Config {
+		float initLearningRate;
+		int nEpoch;
+		float minmax;
+		int h_size;
+		int trainDataSize;
+		int testDataSize;
+		int devID;
+	};
 	
 	/* Aimed model for a.s to true results */
 	struct TestModel {
