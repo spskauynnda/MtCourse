@@ -144,7 +144,7 @@ void _MatrixMul(const XTensor * a, MATRIX_TRANS_TYPE transposedA,
             }
         }
     }
-
+	
     if (isSparseMul) {
         for (int i = 0; i < aList->count; i++) {
             XTensor * ai = (XTensor*)aList->GetItem(i);
@@ -197,7 +197,7 @@ void _MatrixMul(const XTensor * a, MATRIX_TRANS_TYPE transposedA,
         ci->data = NULL;
         delete ci;
     }
-
+	
     delete aList;
     delete bList;
     delete cList;

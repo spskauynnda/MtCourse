@@ -20,8 +20,8 @@ namespace testnet {
 	float trainDataX[] = { 51, 56.8, 58, 63, 66, 69, 73, 76, 81, 85, 90, 94, 97, 100, 103, 107 };
 	float trainDataY[] = { 31, 34.7, 35.6, 36.7, 39.5, 42, 42.7, 47, 49, 51, 52.5, 54, 55.7, 56, 58.8, 59.2 };
 	float testDataX[]  = { 64, 80, 95 };
-
 	float learningRate = testConfig.initLearningRate;
+	
 	void Init(TestModel &model, TestModel &grad, Config testConfig, TensorList& xList, TensorList& yList, float* trainDataX, float* trainDataY);
 	void Train(TestModel &model, TestModel &grad, Config testConfig, TensorList xList, TensorList yList);
 		void Forward(TestNet &hidNet, TestModel model, XTensor input);
@@ -95,7 +95,6 @@ namespace testnet {
 				CleanGrad(grad);
 			}
 		}
-
 	}
 
 	void Forward(TestNet& hidNet, TestModel model, XTensor input) {

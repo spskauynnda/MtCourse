@@ -29,8 +29,14 @@
 #include "../tensor/core/CHeader.h"
 #include "../tensor/test/Test.h"
 
-#include "../testNet/testNet.h"
-/* IF needs runing samples */
+#include "../xor/xorNet.h"
+
+/* If needs running testNet */
+/*
+  #include "../testNet/testNet.h"
+*/
+
+/* If needs running samples */
 /*
   #include "../sample/fnnlm/FNNLM.h"
   #include "../sample/transformer/Transformer.h"
@@ -46,9 +52,11 @@ void TransposeTest();
 void SumDimTest();
 
 using namespace nts;
-using namespace testnet;
+using namespace xornet;
+
 
 /*
+   using namespace testnet;
    using namespace fnnlm;
    using namespace transformer;
    using namespace fnnreg;
@@ -68,9 +76,11 @@ int main( int argc, const char ** argv )
 			TransformerMain(argc - 1, argv + 1);
 		else if (argc > 1 && !strcmp(argv[1], "-fnnreg"))
 			FNNRegMain(argc - 1, argv + 1);
+		else if (argc > 1 && !strcmp(argv[1], "-testMain"))
+			testNetMain(argc - 1, argv + 1);
 	*/
-	else if (argc > 1 && !strcmp(argv[1], "-testMain"))
-		testNetMain(argc - 1, argv + 1);
+	else if (argc > 1 && !strcmp(argv[1], "-xornet"))
+		XorNetMain(argc - 1, argv + 1);
     else{
         fprintf(stderr, "Thanks for using NiuTrans.Network! This is a library for building\n");
         fprintf(stderr, "neural networks in an easy way. \n\n");
