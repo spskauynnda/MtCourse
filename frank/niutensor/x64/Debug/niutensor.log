@@ -1,5 +1,10 @@
 ﻿  xorNetMain.cpp
-f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(104): warning C4305: “*=”: 从“double”到“float”截断
-f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(135): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(119): warning C4305: “*=”: 从“double”到“float”截断
+f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(150): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(203): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(204): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(256): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(257): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+f:\test\cpp\mtcourse\frank\niutensor\source\xor\xornetmain.cpp(263): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
   niutensor.vcxproj -> F:\Test\cpp\MtCourse\frank\x64\Debug\niutensor.exe
   niutensor.vcxproj -> F:\Test\cpp\MtCourse\frank\x64\Debug\niutensor.pdb (Full PDB)

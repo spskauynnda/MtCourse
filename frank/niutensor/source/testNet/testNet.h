@@ -19,6 +19,8 @@ namespace testnet {
 		int testDataSize;
 		int devID;
 	};
+	// waited to be added:  [NarrowFactor]( RateDecreasing/gaps )
+
 	
 	/* Aimed model for a.s to true results */
 	struct TestModel {

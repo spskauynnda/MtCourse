@@ -9,7 +9,7 @@ namespace testnet {
 	#pragma once 
 	Config testConfig = { 
 		0.3F,   // initLearningRate
-		100,    // nEpoch
+		500,    // nEpoch
 		0.01F,  // minmax
 		4,      // h_size
 		16,     // trainDataSize
@@ -79,9 +79,10 @@ namespace testnet {
 	void Train(TestModel& model, TestModel &grad, Config testConfig, TensorList xList, TensorList yList) {
 		TestNet hidNet;
 		for (int i = 0; i < testConfig.nEpoch; i++) {
+			printf("Epoch: %d    ", i);
 			float totalLoss = 0;
 			if (i % 50 == 0) {
-				learningRate *= 0.4;
+				learningRate *= 0.9;
 			}
 			for (int j = 0; j < testConfig.trainDataSize; j++) {
 				XTensor *pXi = xList.GetItem(j);
@@ -94,6 +95,7 @@ namespace testnet {
 				Update(model, grad, learningRate);
 				CleanGrad(grad);
 			}
+			printf("Loss: %f\n", totalLoss / xList.count);
 		}
 	}
 

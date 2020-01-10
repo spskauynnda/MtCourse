@@ -30,11 +30,11 @@
 #include "../tensor/test/Test.h"
 
 #include "../xor/xorNet.h"
+#include "../testNet/testNet.h"
 
-/* If needs running testNet */
-/*
-  #include "../testNet/testNet.h"
-*/
+
+  
+
 
 /* If needs running samples */
 /*
@@ -53,10 +53,9 @@ void SumDimTest();
 
 using namespace nts;
 using namespace xornet;
-
+using namespace testnet;
 
 /*
-   using namespace testnet;
    using namespace fnnlm;
    using namespace transformer;
    using namespace fnnreg;
@@ -76,9 +75,10 @@ int main( int argc, const char ** argv )
 			TransformerMain(argc - 1, argv + 1);
 		else if (argc > 1 && !strcmp(argv[1], "-fnnreg"))
 			FNNRegMain(argc - 1, argv + 1);
-		else if (argc > 1 && !strcmp(argv[1], "-testMain"))
-			testNetMain(argc - 1, argv + 1);
+		
 	*/
+	else if (argc > 1 && !strcmp(argv[1], "-testnet"))
+		testNetMain(argc - 1, argv + 1);
 	else if (argc > 1 && !strcmp(argv[1], "-xornet"))
 		XorNetMain(argc - 1, argv + 1);
     else{
